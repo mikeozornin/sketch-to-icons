@@ -2,8 +2,7 @@
 
 Описание, инструкция: http://mikeozornin.ru/blog/drafts/how-to-build-icon-font-from-sketch/edit/
 
--# Установить необходимое ПО:
-+Репозиторий для сборки иконочного шрифта из sketch-файла.
+# Установить необходимое ПО:
 
 1. Установить brew ([http://brew.sh/index_ru.html](http://brew.sh/index_ru.html)):
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
