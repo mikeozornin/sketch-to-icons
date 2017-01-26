@@ -1,0 +1,23 @@
+{
+  "name": "my-icons",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "%%repository-url%%"
+  },
+  "publishConfig": {
+    "registry": "%%registry-url%%"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "My Company",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-shell": "^2.1.0",
+    "grunt-sketch": "1.0.2",
+    "grunt-webfont": "1.6.0"
+  }
+}
