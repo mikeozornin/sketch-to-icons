@@ -1,6 +1,6 @@
 Репозиторий для сборки иконочного шрифта из sketch-файла.
 
-Описание, инструкция: http://mikeozornin.ru/blog/drafts/how-to-build-icon-font-from-sketch/edit/
+Описание, инструкция: http://mikeozornin.ru/blog/how-to-build-icon-font-from-sketch/
 
 # Установить необходимое ПО:
 
