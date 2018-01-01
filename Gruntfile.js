@@ -49,6 +49,15 @@ module.exports = function(grunt) {
                     fontFamilyName: 'Icons',
                     font: 'my-icons',
                     types: 'ttf, woff',
+                     // Каждой иконке нужно задать номер символа. Мы используем 0xF501 и далее. 
+                    codepoints : {
+                      'upload-to-cloud_24'				: 0xF501,
+                      'upload-to-cloud_64'				: 0xF502,
+                    },
+                    // Иконкам, которым не выставлен номер вручную будет задан номер из пространства
+                    // 0xF701+. Следите за тем, чтобы таких иконок не было.
+                    // Посмотреть коды символов можно с помощью http://opentype.js.org
+                    startCodepoint: 0xF701,
                 }
             }
     	},
