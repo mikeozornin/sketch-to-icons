@@ -2,7 +2,9 @@
 var path = require('path');
 
 var PATH_BUILD_ICONS = './build/icons',
-    PATH_DIST = './dist';
+    PATH_DIST_FONTS = './dist/fonts',
+    PATH_DIST_STYLES = './dist/styles',
+    PATH_DIST_HTML = './dist/html';
 var SKETCH_FILE_DEF = 'iconset.sketch';
 
 module.exports = function(grunt) {
@@ -35,16 +37,18 @@ module.exports = function(grunt) {
         webfont: {
             run: {
                 src: PATH_BUILD_ICONS + '/*.svg',
-                dest: PATH_DIST,
+                dest: PATH_DIST_FONTS,
+                destCss: PATH_DIST_STYLES,
                 options: {
-                    relativeFontPath: PATH_DIST,
+                    relativeFontPath: PATH_DIST_FONTS,
                     stylesheet: 'less',
                     htmlDemo: true,
 
+                    destHtml: PATH_DIST_HTML,
                     template: 'template.css',
                     fontFamilyName: 'Icons',
                     font: 'my-icons',
-                    types: 'woff'
+                    types: 'ttf, woff',
                 }
             }
     	},

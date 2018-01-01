@@ -5,7 +5,8 @@ body {
 }
 .icons__item,
 .icons__item i {
-	overflow: visible !important;
+	-webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 <% if (fontfaceStyles) { %>
@@ -18,7 +19,7 @@ body {
 }
 <% } %>@font-face {
 	font-family:"<%= fontFamilyName %>";
-	src: url('my-icons.woff') format("woff");
+	src: url('../fonts/my-icons.woff') format("woff");
 	font-weight:normal;
 	font-style:normal;
 }
