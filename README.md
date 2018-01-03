@@ -5,27 +5,27 @@
 # Установить необходимое ПО:
 
 1. Установить brew ([http://brew.sh/index_ru.html](http://brew.sh/index_ru.html)):
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
 2. С помощью brew установить шрифтообработчики:
-  brew install ttfautohint fontforge --with-python
+```brew install ttfautohint fontforge --with-python```
 
 3. С помощью brew установить node.js:
-  brew install node
+```brew install node```
 
 4. Установить SketchTool
 При установленном Sketch выполнить в терминале команду:
-  /Applications/Sketch.app/Contents/Resources/sketchtool/install.sh
+```/Applications/Sketch.app/Contents/Resources/sketchtool/install.sh```
 
 5. Установить grunt
-  npm install -g grunt-cli
+```npm install -g grunt-cli```
 
 # Сборка
 Выполнить файл build.sh командой:
-  ./build.sh
+```grunt```
 
 Если не запускается, то перед этим сделать:
-  chmod +x build.sh
+```chmod +x build.sh```
 
 # Публикация новой версии шрифта в репозиторий
 0. Настроить локальный npm-репозиторий. Передайте своему фронтендеру файл package.json и попросите его настроить.
