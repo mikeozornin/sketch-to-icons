@@ -1,6 +1,6 @@
 {
   "name": "my-icons",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
     "grunt": "1.0.1",
     "grunt-shell": "^2.1.0",
     "grunt-sketch": "1.0.2",
-    "grunt-webfont": "1.6.0"
+    "grunt-webfont": "1.6.0",
+    "grunt-text-replace": "^0.4.0"
   }
 }

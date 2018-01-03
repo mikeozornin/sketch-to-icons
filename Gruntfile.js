@@ -49,10 +49,11 @@ module.exports = function(grunt) {
                     fontFamilyName: 'Icons',
                     font: 'my-icons',
                     types: 'ttf, woff',
+                    version: '2.0.0',                    
                      // Каждой иконке нужно задать номер символа. Мы используем 0xF501 и далее. 
                     codepoints : {
-                      'upload-to-cloud_24'				: 0xF501,
-                      'upload-to-cloud_64'				: 0xF502,
+                      'upload-to-cloud_24' : 0xF501,
+                      'upload-to-cloud_64' : 0xF502,
                     },
                     // Иконкам, которым не выставлен номер вручную будет задан номер из пространства
                     // 0xF701+. Следите за тем, чтобы таких иконок не было.
@@ -65,13 +66,31 @@ module.exports = function(grunt) {
             publish: {
                 command: 'npm publish'
             }
-        }
+        },
+        replace: {
+            remove_mask: {
+              src: [PATH_BUILD_ICONS + '/*.svg'],
+              overwrite: true,                 // overwrite matched source files
+              replacements: [
+                   {from : / fill="(.*?)"/m,             to : ''},
+                   {from : /(\s*)<\/defs[\s\S]*<\/g>/m,  to : ''},
+                   {from : /(\s*)<defs>/m,               to : ''},
+                   {from : / id="(.*?)"/m,               to : ''},
+                   {from : /xmlns:xlink="(.*?)"/m,       to : ''},
+                   {from : /(\s*)<g[\s\S]*?>/m,          to : ''},
+                   {from : /(\s*)<\/g>/m,                to : ''},
+                   {from : /<svg/m,                      to : '<svg fill="#000"'},
+                   {from : / transform="(.*?)"/m,        to : ''},
+                   {from : / fill-rule="(.*?)"/m,        to : ''},]            
+            }
+          }
     });
 
     grunt.loadNpmTasks('grunt-sketch');
     grunt.loadNpmTasks('grunt-webfont');
+    grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('publish', ['sketch_export:run', 'webfont:run', 'shell:publish']);
-    grunt.registerTask('default', ['sketch_export:run', 'webfont:run']);
+    grunt.registerTask('publish', ['sketch_export:run', 'replace:remove_mask', 'webfont:run', 'shell:publish']);
+    grunt.registerTask('default', ['sketch_export:run', 'replace:remove_mask', 'webfont:run']);
 
 };
